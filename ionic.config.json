@@ -1,0 +1,7 @@
+{
+  "name": "ionicReactCapacitorFirebaseStarter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
