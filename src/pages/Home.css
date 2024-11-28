@@ -1,0 +1,10 @@
+.bg-primary {
+    background-color: var(--ion-color-primary);
+}
+
+/* Optional hover effect */
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}

@@ -1,0 +1,7 @@
+@import "./variables.css";
+
+/* Other CSS rules and declarations go here */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
