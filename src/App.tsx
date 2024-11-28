@@ -1,69 +1,84 @@
-// Third-party imports
-import { useEffect } from "react";
-import { Redirect, Route } from "react-router-dom";
-import {
-    IonApp,
-    IonRouterOutlet,
-    setupIonicReact
-} from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
+// React and React Router imports
+import React, { useEffect } from 'react';
+import { Redirect, Route, useHistory } from 'react-router';
 
-// Local imports
-import Home from "./pages/Home";
-import { initializeFirebase } from "./lib/firebase";
-import { useAuth } from "./hooks/useAuth";
+// Ionic imports
+import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
 
-// CSS imports
-import "@ionic/react/css/core.css";
-import "@ionic/react/css/normalize.css";
-import "@ionic/react/css/structure.css";
-import "@ionic/react/css/typography.css";
-import "@ionic/react/css/padding.css";
-import "@ionic/react/css/float-elements.css";
-import "@ionic/react/css/text-alignment.css";
-import "@ionic/react/css/text-transformation.css";
-import "@ionic/react/css/flex-utils.css";
-import "@ionic/react/css/display.css";
-// import "@ionic/react/css/palettes/dark.always.css";
+// Capacitor imports
+import { App as CapacitorApp } from '@capacitor/app';
+import { initializeFirebase } from './lib/firebase';
+import { useAuthStateChangedEffect } from './hooks/useAuthStateChangedEffect';
+import Home from './pages/Home';
+import { useAuth } from './hooks/useAuth';
+
+/* Core CSS required for Ionic components to work properly */
+import '@ionic/react/css/core.css';
+import '@ionic/react/css/normalize.css';
+import '@ionic/react/css/structure.css';
+import '@ionic/react/css/typography.css';
+
+/* Optional CSS utils */
+import '@ionic/react/css/display.css';
+import '@ionic/react/css/flex-utils.css';
+import '@ionic/react/css/float-elements.css';
+import '@ionic/react/css/padding.css';
+import '@ionic/react/css/text-alignment.css';
+import '@ionic/react/css/text-transformation.css';
 import "./theme/variables.css";
 
 setupIonicReact({
-    mode: "ios"
+    mode: 'ios'
 });
 
-/**
- * Main application component that handles routing and Firebase initialization
- * @returns The main application component with routing setup
- */
-const App: React.FC = () => {
-    const user = useAuth();
+const App: React.FC =
+    () => {
+        const user = useAuth();
+        const history = useHistory();
+        useAuthStateChangedEffect((result) => {
+            console.log('Auth state changed:', result);
+        })
 
-    useEffect(() => {
-        const setup = async (): Promise<void> => {
-            try {
-                await initializeFirebase();
-            } catch (error) {
-                console.error("Application initialization failed:", error);
-            }
-        };
+        useEffect(() => {
+            const setup = async (): Promise<void> => {
+                try {
+                    console.log('Initializing Firebase');
+                    await initializeFirebase();
+                } catch (error) {
+                    console.error("Application initialization failed:", error);
+                }
+            };
 
-        void setup();
-    }, []);
+            void setup();
+        }, []);
 
-    return (
-        <IonApp>
-            <IonReactRouter>
-                <IonRouterOutlet>
-                    <Route exact path="/home">
-                        <Home user={user} />
-                    </Route>
-                    <Route exact path="/">
-                        <Redirect to="/home" />
-                    </Route>
-                </IonRouterOutlet>
-            </IonReactRouter>
-        </IonApp>
-    );
-};
+
+
+        useEffect(() => {
+            CapacitorApp.addListener('appUrlOpen', (data: any) => {
+                const url = new URL(data.url);
+                const path = url.pathname;
+                history.push(path);
+            });
+        }, [history]);
+
+
+
+        return (
+            <IonApp>
+                <IonReactRouter>
+                    <IonRouterOutlet>
+                        <Route exact path="/home">
+                            <Home user={user} />
+                        </Route>
+                        <Route exact path="/">
+                            <Redirect to="/home" />
+                        </Route>
+                    </IonRouterOutlet>
+                </IonReactRouter>
+            </IonApp>
+        );
+    };
 
 export default App;
