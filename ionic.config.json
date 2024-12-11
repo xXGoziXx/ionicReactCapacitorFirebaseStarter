@@ -1,7 +1,7 @@
 {
-  "name": "ionicReactCapacitorFirebaseStarter",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "react-vite"
+    "name": "laxlee",
+    "integrations": {
+        "capacitor": {}
+    },
+    "type": "react"
 }

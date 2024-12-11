@@ -1,27 +1,42 @@
 {
+  "database": {
+    "rules": "database.rules.json"
+  },
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
   "functions": [
     {
-      "source": "functions",
+      "source": "functions/typescript",
       "codebase": "default",
       "ignore": [
         "node_modules",
         ".git",
         "firebase-debug.log",
-        "firebase-debug.*.log",
-        "*.local"
+        "firebase-debug.*.log"
       ],
       "predeploy": [
-        "npm --prefix \"$RESOURCE_DIR\" run lint",
-        "npm --prefix \"$RESOURCE_DIR\" run build"
+        "npm --prefix ./functions/typescript run lint",
+        "npm --prefix ./functions/typescript run build"
+      ]
+    },
+    {
+      "source": "functions/python",
+      "codebase": "python",
+      "ignore": [
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log"
+      ],
+      "predeploy": [
+        "pip install -r functions/python/requirements.txt"
       ]
     }
   ],
   "hosting": {
-    "public": "public",
+    "target": "app",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -31,6 +46,17 @@
       {
         "source": "**",
         "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000"
+          }
+        ]
       }
     ]
   },
@@ -47,8 +73,14 @@
     "firestore": {
       "port": 8080
     },
+    "database": {
+      "port": 9000
+    },
     "hosting": {
-      "port": 5000
+      "port": 5008
+    },
+    "pubsub": {
+      "port": 8085
     },
     "storage": {
       "port": 9199
@@ -57,5 +89,8 @@
       "enabled": true
     },
     "singleProjectMode": true
+  },
+  "remoteconfig": {
+    "template": "remoteconfig.template.json"
   }
 }

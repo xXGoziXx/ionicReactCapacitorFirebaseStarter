@@ -1,13 +1,12 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonIcon } from '@ionic/react';
 import { useCallback, useEffect, useState, useRef } from 'react';
 import { FirestorePost } from '../models/Post';
 import { User } from '@capacitor-firebase/authentication';
 import ExploreContainer from '../components/ExploreContainer';
 import MediaGallery from '../components/MediaGallery';
-import './Home.css';
 import { fetchRecommendedPosts } from "../lib/posts";
-import { IonIcon } from '@ionic/react';
 import { chevronUpOutline, chevronDownOutline } from 'ionicons/icons';
+import './Home.css';
 
 const Home: React.FC<{ user: User | null }> = ({ user }) => {
     const [recommendedPosts, setRecommendedPosts] = useState<FirestorePost[]>([]);

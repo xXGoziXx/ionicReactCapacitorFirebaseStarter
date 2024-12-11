@@ -1,0 +1,39 @@
+.slide-up-div {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    margin-bottom: 5%;
+    width: 100vw;
+    height: 60vh;
+    background-color: #36454f;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    color: #fff !important;
+    animation: slideUp 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.top-comment-bar {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #fff !important;
+    /* border-bottom: solid 1px #fff; */
+}
+
+.comments-section {
+    padding-right: 10px;
+    padding-left: 12px;
+}
+
+.top-comment-bar .sc-ion-searchbar-md {
+    color: #fff !important;
+}

@@ -1,64 +1,68 @@
-/// <reference types="vitest" />
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
+import react from '@vitejs/plugin-react';
+import { chunkSplitPlugin } from 'vite-plugin-chunk-split';
+import { VitePWA } from 'vite-plugin-pwa';
+import config from './postcss.config';
+import { version } from './package.json';
 
-import legacy from '@vitejs/plugin-legacy'
-import react from '@vitejs/plugin-react'
-import { defineConfig } from 'vite'
-import { VitePWA } from 'vite-plugin-pwa'
-
+const isProduction = process.env.NODE_ENV === 'production';
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    legacy(),
-    VitePWA({
-      strategies: 'injectManifest',
-      srcDir: 'src',
-      filename: 'service-worker.ts',
-      registerType: 'autoUpdate',
-      injectRegister: 'auto',
-      manifest: {
-        name: "My Ionic App",
-        short_name: "Ionic App",
-        theme_color: "#ffffff",
-        background_color: "#ffffff",
-        display: "standalone",
-        scope: "/",
-        start_url: "/",
-        icons: [
-          {
-            src: "assets/icon/favicon.png",
-            sizes: "64x64 32x32 24x24 16x16",
-            type: "image/x-icon"
-          },
-          {
-            src: "assets/icon/icon.png",
-            type: "image/png",
-            sizes: "512x512",
-            purpose: "maskable"
-          }
-        ]
-      },
-      workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp}'],
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/firebasestorage\.googleapis\.com/,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'firebase-storage',
-              expiration: {
-                maxEntries: 50,
-                maxAgeSeconds: 7 * 24 * 60 * 60 // 1 week
-              }
+    plugins: [
+        react(),
+        VitePWA({
+            registerType: 'autoUpdate',
+            devOptions: {
+                enabled: !isProduction
+            },
+            manifest: {
+                name: 'Gontrel',
+                short_name: 'Gontrel',
+                description: 'Gontrel - Discover & experience',
+                theme_color: '#ffffff',
+                start_url: '/',
+                display: 'standalone',
+                background_color: '#3367D6',
+                icons: [
+                    {
+                        src: '/assets/icon.png',
+                        sizes: '192x192',
+                        type: 'image/png'
+                    },
+                    {
+                        src: '/assets/icon.png',
+                        sizes: '512x512',
+                        type: 'image/png'
+                    }
+                ]
+            },
+            workbox: {
+                cleanupOutdatedCaches: true,
+                skipWaiting: true,
+                clientsClaim: true,
+                maximumFileSizeToCacheInBytes: 5000000
             }
-          }
-        ]
-      }
-    })
-  ],
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/setupTests.ts',
-  }
-})
+        }),
+        chunkSplitPlugin(),
+        splitVendorChunkPlugin()
+    ],
+    build: {
+        minify: isProduction,
+        chunkSizeWarningLimit: 2000
+    },
+    define: {
+        'import.meta.env.VITE_APP_VERSION': JSON.stringify(version)
+    },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                api: 'modern-compiler' // or "modern"
+            },
+            postcss: config.plugins
+        }
+    },
+    // To allow the emulator to successfully export the firestor on exit
+    server: {
+        watch: { usePolling: true }
+    }
+});

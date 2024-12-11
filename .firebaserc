@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "laxlee"
-  }
+  },
+  "targets": {
+    "laxlee": {
+      "hosting": {
+        "app": [
+          "laxlee"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

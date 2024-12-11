@@ -1,0 +1,260 @@
+## Capacitor Plugins
+
+- 🟩 [@capacitor-community/apple-sign-in@6.0.0](https://github.com/capacitor-community/apple-sign-in.git)
+- 🟩 [@capacitor-firebase/authentication@6.1.0](https://github.com/capawesome-team/capacitor-firebase.git)
+- 🟩 [@capacitor/app@6.0.1](https://github.com/ionic-team/capacitor-plugins.git)
+- 🟩 [@capacitor/clipboard@6.0.1](https://github.com/ionic-team/capacitor-plugins.git)
+- 🟩 [@capacitor/geolocation@6.0.1](https://github.com/ionic-team/capacitor-plugins.git)
+- 🟩 [@capacitor/haptics@6.0.1](https://github.com/ionic-team/capacitor-plugins.git)
+- 🟩 [@capacitor/keyboard@6.0.2](https://github.com/ionic-team/capacitor-plugins.git)
+- 🟩 [@capacitor/preferences@6.0.2](https://github.com/ionic-team/capacitor-plugins.git)
+- 🟩 [@capacitor/share@6.0.2](https://github.com/ionic-team/capacitor-plugins.git)
+- 🟩 [@capacitor/splash-screen@6.0.2](https://github.com/ionic-team/capacitor-plugins.git)
+- 🟩 [@capacitor/status-bar@6.0.1](https://github.com/ionic-team/capacitor-plugins.git)
+
+## Cordova Plugins
+
+## Dependencies
+
+- 🟩 [@aws-crypto/sha256-browser@5.2.0](https://github.com/aws/aws-sdk-js-crypto-helpers.git)
+- 🟩 [@capacitor/android@6.1.2](https://github.com/ionic-team/capacitor.git)
+- 🟩 [@capacitor/cli@6.1.2](https://github.com/ionic-team/capacitor.git)
+- 🟩 [@capacitor/core@6.1.2](https://github.com/ionic-team/capacitor.git)
+- 🟩 [@capacitor/ios@6.1.2](https://github.com/ionic-team/capacitor.git)
+- 🟩 [@firebase/app@0.10.11](https://github.com/firebase/firebase-js-sdk.git)
+- 🟩 [@firebase/app-types@0.9.2](https://github.com/firebase/firebase-js-sdk.git)
+- 🟩 [@firebase/auth@1.7.9](https://github.com/firebase/firebase-js-sdk.git)
+- 🟩 [@firebase/storage-types@0.8.2](https://github.com/firebase/firebase-js-sdk.git)
+- 🟩 [@firebase/util@1.10.0](https://github.com/firebase/firebase-js-sdk.git)
+- 🟩 [@googlemaps/js-api-loader@1.16.8](https://github.com/googlemaps/js-api-loader.git)
+- 🟩 [@ionic/react@8.3.1](https://github.com/ionic-team/ionic-framework.git)
+- 🟩 [@ionic/react-router@8.3.1](https://github.com/ionic-team/ionic-framework.git)
+- 🟥 [@mobx-devtools/tools@0.0.4](https://github.com/mobx-devtools/mobx-devtools.git.git) - Unmaintained (2.8 years since last release)
+- 🟧 [@stylistic/eslint-plugin@1.4.1](https://github.com/eslint-stylistic/eslint-stylistic.git) - (Latest 2.8.0) - Is behind 1 major version.
+- 🟧 [@stylistic/eslint-plugin-ts@1.8.1](https://github.com/eslint-stylistic/eslint-stylistic.git) - (Latest 2.8.0) - Is behind 1 major version.
+- 🟩 [@tailwindcss/aspect-ratio@0.4.2](https://github.com/tailwindlabs/tailwindcss-aspect-ratio.git)
+- 🟩 [@tailwindcss/forms@0.5.9](https://github.com/tailwindlabs/tailwindcss-forms.git)
+- 🟩 [@tailwindcss/line-clamp@0.4.4](https://github.com/tailwindlabs/tailwindcss-line-clamp.git)
+- 🟩 [@tailwindcss/typography@0.5.15](https://github.com/tailwindlabs/tailwindcss-typography.git)
+- 🟩 [@testing-library/jest-dom@6.5.0](https://github.com/testing-library/jest-dom.git)
+- 🟧 [@testing-library/react@15.0.7](https://github.com/testing-library/react-testing-library.git) - (Latest 16.0.1) - Is behind 1 major version.
+- 🟩 [@types/google.maps@3.58.1](https://github.com/DefinitelyTyped/DefinitelyTyped.git)
+- 🟩 [@types/lodash@4.17.9](https://github.com/DefinitelyTyped/DefinitelyTyped.git)
+- 🟧 [@types/node@20.16.9](https://github.com/DefinitelyTyped/DefinitelyTyped.git) - (Latest 22.7.3) - Is behind 2 major versions.
+- 🟩 [@types/react@18.3.9](https://github.com/DefinitelyTyped/DefinitelyTyped.git)
+- 🟩 [@types/react-dom@18.3.0](https://github.com/DefinitelyTyped/DefinitelyTyped.git)
+- 🟧 [@types/react-router@5.1.20](https://github.com/DefinitelyTyped/DefinitelyTyped.git) - May be unmaintained (1.8 years since last release)
+- 🟥 [@types/react-router-dom@5.3.3](https://github.com/DefinitelyTyped/DefinitelyTyped.git) - Unmaintained (2.7 years since last release)
+- 🟩 [@types/uuid@10.0.0](https://github.com/DefinitelyTyped/DefinitelyTyped.git)
+- 🟧 [@typescript-eslint/eslint-plugin@7.18.0](https://github.com/typescript-eslint/typescript-eslint.git) - (Latest 8.7.0) - Is behind 1 major version.
+- 🟧 [@typescript-eslint/parser@7.18.0](https://github.com/typescript-eslint/typescript-eslint.git) - (Latest 8.7.0) - Is behind 1 major version.
+- 🟩 [@vitejs/plugin-react@4.3.1](https://github.com/vitejs/vite-plugin-react.git)
+- 🟧 [algoliasearch@4.24.0](https://github.com/algolia/algoliasearch-client-javascript.git) - (Latest 5.6.1) - Is behind 1 major version.
+- 🟩 [autoprefixer@10.4.20](https://github.com/postcss/autoprefixer.git)
+- 🟥 [csscomb@4.3.0](https://github.com/csscomb/csscomb.js.git) - Unmaintained (5.4 years since last release)
+- 🟩 [cssnano@7.0.6](https://github.com/cssnano/cssnano.git)
+- 🟩 [date-fns@4.1.0](https://github.com/date-fns/date-fns.git)
+- 🟩 [embla-carousel@8.3.0](https://github.com/davidjerleke/embla-carousel)
+- 🟩 [embla-carousel-react@8.3.0](https://github.com/davidjerleke/embla-carousel)
+- 🟧 [eslint@8.57.1](https://github.com/eslint/eslint.git) - (Latest 9.11.1) - Is behind 1 major version.
+- 🟥 [eslint-config-google@0.14.0](https://github.com/google/eslint-config-google.git) - Unmaintained (5.1 years since last release)
+- 🟩 [eslint-plugin-import@2.29.1](https://github.com/import-js/eslint-plugin-import.git)
+- 🟩 [eslint-plugin-react@7.36.1](https://github.com/jsx-eslint/eslint-plugin-react.git)
+- 🟩 [eslint-plugin-react-hooks@4.6.2](https://github.com/facebook/react.git)
+- 🟩 [eslint-plugin-react-refresh@0.4.12](https://github.com/ArnaudBarre/eslint-plugin-react-refresh.git)
+- 🟩 [firebase@10.13.2](https://github.com/firebase/firebase-js-sdk.git)
+- 🟩 [fuse.js@7.0.0](https://github.com/krisk/Fuse.git)
+- 🟥 [geofire-common@6.0.0](https://github.com/firebase/geofire-js.git) - Unmaintained (2.2 years since last release)
+- 🟩 [ionicons@7.4.0](https://github.com/ionic-team/ionicons.git)
+- 🟩 [jest@29.7.0](https://github.com/jestjs/jest.git)
+- 🟥 [lodash@4.17.21](https://github.com/lodash/lodash.git) - Unmaintained (3.6 years since last release)
+- 🟩 [mobx@6.12.3](https://github.com/mobxjs/mobx.git) - (Latest 6.13.3)
+- 🟩 [mobx-log@2.2.3](https://github.com/kubk/mobx-log.git)
+- 🟩 [mobx-react@9.1.1](https://github.com/mobxjs/mobx.git)
+- 🟩 [mobx-react-lite@4.0.7](https://github.com/mobxjs/mobx.git)
+- 🟩 [moment-timezone@0.5.45](https://github.com/moment/moment-timezone.git)
+- 🟩 [postcss@8.4.47](https://github.com/postcss/postcss.git)
+- 🟥 [postcss-apply@0.12.0](https://github.com/pascalduez/postcss-apply.git) - Unmaintained (5.6 years since last release)
+- 🟩 [postcss-cli@11.0.0](https://github.com/postcss/postcss-cli.git)
+- 🟥 [postcss-csscomb@4.0.0](https://github.com/1000ch/postcss-csscomb.git) - Unmaintained (3.4 years since last release)
+- 🟩 [postcss-import@16.1.0](https://github.com/postcss/postcss-import.git)
+- 🟧 [postcss-nesting@12.1.5](https://github.com/csstools/postcss-plugins.git) - (Latest 13.0.0) - Is behind 1 major version.
+- 🟧 [postcss-sorting@8.0.2](https://github.com/hudochenkov/postcss-sorting.git) - May be unmaintained (1.6 years since last release)
+- 🟩 [posthog-js@1.165.0](https://github.com/PostHog/posthog-js.git)
+- 🟩 [prettier@3.3.3](https://github.com/prettier/prettier.git)
+- 🟩 [prettier-eslint@16.3.0](https://github.com/prettier/prettier-eslint.git)
+- 🟥 [prettier-stylelint@0.4.2](https://github.com/hugomrdias/prettier-stylelint.git) - Unmaintained (7 years since last release)
+- 🟩 [react@18.3.1](https://github.com/facebook/react.git)
+- 🟩 [react-dom@18.3.1](https://github.com/facebook/react.git)
+- 🟥 [react-ioc@1.0.0](https://github.com/gnaeus/react-ioc.git) - Unmaintained (5.8 years since last release)
+- 🟧 [react-router@5.3.4](https://github.com/remix-run/react-router.git) - (Latest 6.26.2) - Is behind 1 major version.
+- 🟧 [react-router-dom@5.3.4](https://github.com/remix-run/react-router.git) - (Latest 6.26.2) - Is behind 1 major version.
+- 🟥 [rollup-plugin-postcss@4.0.2](https://github.com/egoist/rollup-plugin-postcss.git) - Unmaintained (2.8 years since last release)
+- 🟩 [sass@1.79.3](https://github.com/sass/dart-sass.git)
+- 🟩 [search-insights@2.17.2](https://github.com/algolia/search-insights.js.git)
+- 🟩 [stylelint-config-standard-scss@13.1.0](https://github.com/stylelint-scss/stylelint-config-standard-scss.git)
+- 🟩 [tailwindcss@3.4.13](https://github.com/tailwindlabs/tailwindcss.git)
+- 🟩 [ts-node@10.9.2](https://github.com/TypeStrong/ts-node.git)
+- 🟩 [typescript@5.6.2](https://github.com/microsoft/TypeScript.git)
+- 🟩 [uuid@11.0.0](https://github.com/uuidjs/uuid.git)
+- 🟩 [vite@5.4.8](https://github.com/vitejs/vite.git)
+- 🟩 [vite-plugin-pwa@0.19.8](https://github.com/vite-pwa/vite-plugin-pwa.git) - (Latest 0.20.5)
+- 🟧 [web-vitals@0.2.4](https://github.com/GoogleChrome/web-vitals.git) - (Latest 4.2.3) - Is behind 4 major versions.
+- 🟩 [workbox-build@7.0.0](https://github.com/googlechrome/workbox.git)
+- 🟩 [workbox-window@7.0.0](https://github.com/googlechrome/workbox.git)
+
+### Maintenance Score
+
+72 out of 97 dependencies were up to date without issues.
+
+## Nonstandard naming
+
+The following files and folders do not follow the standard naming convention:
+
+- /.DS_Store
+- /App.scss
+- /App.tsx
+- /assets/.DS_Store
+- /assets/icons/.DS_Store
+- /assets/icons/BlackGontrelLoader.png
+- /assets/icons/Plane.svg
+- /assets/icons/RestaurantMapMarker.svg
+- /assets/icons/WhiteGontrelLoader.png
+- /components/.DS_Store
+- /components/AddRestaurantForm/AddRestaurantFormOne/AddRestaurantFormOne.scss
+- /components/AddRestaurantForm/AddRestaurantFormOne/AddRestaurantFormOne.tsx
+- /components/AddRestaurantForm/AddRestaurantFormOne/AddRestaurantFormOneSkeleton.tsx
+- /components/AddRestaurantForm/AddRestaurantFormThree/AddRestaurantFormThree.scss
+- /components/AddRestaurantForm/AddRestaurantFormThree/AddRestaurantFormThree.tsx
+- /components/AddRestaurantForm/AddRestaurantFormTwo/AddRestaurantFormTwo.scss
+- /components/AddRestaurantForm/AddRestaurantFormTwo/AddRestaurantFormTwo.tsx
+- /components/AdminMenuReservationInputs/AdminMenuReservationInputs.scss
+- /components/AdminMenuReservationInputs/AdminMenuReservationInputs.tsx
+- /components/AdminPostTagModal/AdminPostTagModal.scss
+- /components/AdminPostTagModal/AdminPostTagModal.tsx
+- /components/AdminSuccessModal/AdminSuccessModal.scss
+- /components/AdminSuccessModal/AdminSuccessModal.tsx
+- /components/AuthTopNav/AuthTopNav.scss
+- /components/AuthTopNav/AuthTopNav.tsx
+- /components/BottomNav/BottomNav.scss
+- /components/BottomNav/BottomNav.tsx
+- /components/CommentContent/CommentContent.scss
+- /components/CommentContent/CommentContent.tsx
+- /components/CommentModal/CommentModal.scss
+- /components/CommentModal/CommentModal.tsx
+- /components/DefaultProfile/DefaultProfile.scss
+- /components/DefaultProfile/DefaultProfile.tsx
+- /components/DirectionsModal/DirectionsModal.scss
+- /components/DirectionsModal/DirectionsModal.tsx
+- /components/FilterModal/FilterModal.scss
+- /components/FilterModal/FilterModal.tsx
+- /components/FoodTypeSelector/FoodTypeSelector.scss
+- /components/FoodTypeSelector/FoodTypeSelector.tsx
+- /components/ForgotPassword/ForgotPassword.scss
+- /components/ForgotPassword/ForgotPassword.tsx
+- /components/GontrelLogoLoader/GontrelLogoLoader.scss
+- /components/GontrelLogoLoader/GontrelLogoLoader.tsx
+- /components/Icons/.DS_Store
+- /components/Icons/BrandIcons.tsx
+- /components/Icons/Icons.scss
+- /components/Icons/Icons.tsx
+- /components/InputHelperText.tsx
+- /components/MediaGrid/MediaGrid.scss
+- /components/MediaGrid/MediaGrid.tsx
+- /components/NotFound/NotFound.scss
+- /components/NotFound/NotFound.tsx
+- /components/OpeningHoursModal/OpeningHoursModal.scss
+- /components/OpeningHoursModal/OpeningHoursModal.tsx
+- /components/Post.tsx
+- /components/PostCard/PostCard.scss
+- /components/PostCard/PostCard.tsx
+- /components/PostCard/PostCardSkeleton.tsx
+- /components/PostCardCarousel/PostCardCarousel.scss
+- /components/PostCardCarousel/PostCardCarousel.tsx
+- /components/PostHogPageviewTracker.tsx
+- /components/ProfileCard/ProfileCard.scss
+- /components/ProfileCard/ProfileCard.tsx
+- /components/ReplyContent/ReplyContent.scss
+- /components/ReplyContent/ReplyContent.tsx
+- /components/ResetLinkSent/ResetLinkSent.scss
+- /components/ResetLinkSent/ResetLinkSent.tsx
+- /components/SearchList/SearchList.scss
+- /components/SearchList/SearchList.tsx
+- /components/Stepper/Stepper.scss
+- /components/Stepper/Stepper.tsx
+- /components/TopNav/TopNav.scss
+- /components/TopNav/TopNav.tsx
+- /components/UserMessage/UserMessage.scss
+- /components/UserMessage/UserMessage.tsx
+- /components/VideoVerifierMenuModal/VideoVerifierMenuModal.scss
+- /components/VideoVerifierMenuModal/VideoVerifierMenuModal.tsx
+- /components/VideoVerifierPreviewModal/VideoVeriferPreviewModal.scss
+- /components/VideoVerifierPreviewModal/VideoVerifierPreviewModal.tsx
+- /components/VideoVerifierRestaurantListCard/VideoVerifierRestaurantListCard.scss
+- /components/VideoVerifierRestaurantListCard/VideoVerifierRestaurantListCard.tsx
+- /components/VideoVerifierRestaurantListCard/VideoVerifierRestaurantListCardSkeleton.tsx
+- /components/VirtualizedCarousel/VirtualizedCarousel.scss
+- /components/VirtualizedCarousel/VirtualizedCarousel.tsx
+- /models/Admin.ts
+- /models/Comment.ts
+- /models/Filter.ts
+- /models/Like.ts
+- /models/Location.ts
+- /models/Post.ts
+- /models/User.ts
+- /pages/.DS_Store
+- /pages/AdminDashboardPage/AdminAddVideosPage/AdminAddVideosPage.scss
+- /pages/AdminDashboardPage/AdminAddVideosPage/AdminAddVideosPage.tsx
+- /pages/AdminDashboardPage/AdminDashboardPage.scss
+- /pages/AdminDashboardPage/AdminDashboardPage.tsx
+- /pages/AdminDashboardPage/AdminDashboardPageLegacy/AdminDashboardPageLegacy.scss
+- /pages/AdminDashboardPage/AdminDashboardPageLegacy/AdminDashboardPageLegacy.tsx
+- /pages/AdminDashboardPage/AdminLocationFormPage/AdminLocationFormPage.scss
+- /pages/AdminDashboardPage/AdminLocationFormPage/AdminLocationFormPage.tsx
+- /pages/AdminDashboardPage/AdminPostFormPage/AdminPostFormPage.scss
+- /pages/AdminDashboardPage/AdminPostFormPage/AdminPostFormPage.tsx
+- /pages/AdminDashboardPage/AdminVideoVerifierPage/AdminAddRestaurantPage/AdminAddRestaurantPage.scss
+- /pages/AdminDashboardPage/AdminVideoVerifierPage/AdminAddRestaurantPage/AdminAddRestaurantPage.tsx
+- /pages/AdminDashboardPage/AdminVideoVerifierPage/AdminVideoVerifierViewPage/AdminVideoVerifierViewPage.scss
+- /pages/AdminDashboardPage/AdminVideoVerifierPage/AdminVideoVerifierViewPage/AdminVideoVerifierViewPage.tsx
+- /pages/BusinessProfilePage/BusinessProfilePage.scss
+- /pages/BusinessProfilePage/BusinessProfilePage.tsx
+- /pages/CreateAccountPage/CreateAccountPage.scss
+- /pages/CreateAccountPage/CreateAccountPage.tsx
+- /pages/ForgotPasswordPage/ForgotPasswordPage.scss
+- /pages/ForgotPasswordPage/ForgotPasswordPage.tsx
+- /pages/HomePage/HomePage.scss
+- /pages/HomePage/HomePage.tsx
+- /pages/LoginPage/LoginPage.scss
+- /pages/LoginPage/LoginPage.tsx
+- /pages/PrivacyPolicyPage/PrivacyPolicyPage.scss
+- /pages/PrivacyPolicyPage/PrivacyPolicyPage.tsx
+- /pages/ProfilePage/ProfilePage.scss
+- /pages/ProfilePage/ProfilePage.tsx
+- /pages/RestaurantPage/RestaurantPage.scss
+- /pages/RestaurantPage/RestaurantPage.tsx
+- /pages/SavedPostsPage/SavedPostsPage.scss
+- /pages/SavedPostsPage/SavedPostsPage.tsx
+- /pages/SearchPage/SearchKeywordResultsPage/SearchKeywordResultsPage.scss
+- /pages/SearchPage/SearchKeywordResultsPage/SearchKeywordResultsPage.tsx
+- /pages/SearchPage/SearchPage.scss
+- /pages/SearchPage/SearchPage.tsx
+- /pages/SearchPage/SearchResultsPage/SearchResultsPage.scss
+- /pages/SearchPage/SearchResultsPage/SearchResultsPage.tsx
+- /pages/SharedPostsPage/SharedPostsPage.scss
+- /pages/SharedPostsPage/SharedPostsPage.tsx
+- /pages/SplashScreenPage/SplashScreenPage.scss
+- /pages/SplashScreenPage/SplashScreenPage.tsx
+- /pages/TermsConditionsPage/TermsConditionsPage.scss
+- /pages/TermsConditionsPage/TermsConditionsPage.tsx
+- /pages/VerificationPage/VerificationPage.scss
+- /pages/VerificationPage/VerificationPage.tsx
+- /pages/WelcomePage/WelcomePage.scss
+- /pages/WelcomePage/WelcomePage.tsx
+- /reportWebVitals.ts
+- /routes/Routes.tsx
+- /serviceWorkerRegistration.ts
+- /stores/AdminStore.tsx
+- /stores/ConfigStore.tsx
+- /stores/PostStore.tsx
+- /stores/UserStore.tsx

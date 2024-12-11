@@ -1,0 +1,72 @@
+@mixin button-styles {
+    font-size: 16px;
+    font-weight: 500;
+
+    --border-radius: 8px;
+
+    &::part(native) {
+        height: 48px;
+    }
+
+    &.main-action-button {
+        --color: white;
+        --background: #0070f3;
+    }
+
+    &.alternate-action-button {
+        --color: #0070f3;
+        --background: transparent;
+
+        --border-width: 1px;
+        --border-style: solid;
+        --border-color: #8abdf9;
+    }
+
+    &.remove-button {
+        --color: #ed0000;
+
+        --border-width: 1px;
+        --border-style: solid;
+        --border-color: #f78a8a;
+        &::part(native) {
+            padding: 0;
+
+        }&.icon::part(native) {
+                width: 48px;
+
+        }
+    }
+}
+
+
+@mixin menu-modal-styles {
+    ion-item {
+        font-weight: 500;
+
+        --border-color: #ebecec;
+    }
+
+    ion-toolbar {
+        display: flex;
+
+        ion-title {
+            height: 100%;
+
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        ion-button.ios {
+            --padding-top: 0px;
+            --padding-bottom: 0px;
+
+            --padding-start: 0px;
+            --padding-end: 0px;
+
+            ion-icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}

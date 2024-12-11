@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "importHelpers": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+    },
+    "include": [
+        ".eslintrc.js"
+    ]
+}

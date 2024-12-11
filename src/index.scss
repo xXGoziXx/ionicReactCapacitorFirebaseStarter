@@ -1,0 +1,624 @@
+@import 'variables.scss';
+@import 'styles/custom-styles.scss';
+// @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide {
+    0% {
+        background-position: 50% 0%;
+    }
+    100% {
+        background-position: -50% 0%;
+    }
+}
+
+@font-face {
+    font-family: 'Figtree';
+    font-style: normal;
+
+    src: url('/assets/fonts/Figtree/Figtree-VariableFont_wght.ttf')
+        format('truetype');
+}
+
+@font-face {
+    font-family: 'Figtree';
+    font-style: italic;
+
+    src: url('/assets/fonts/Figtree/Figtree-Italic-VariableFont_wght.ttf')
+        format('truetype');
+}
+
+* {
+    font-family: Figtree, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    will-change: auto;
+    &::-webkit-scrollbar {
+        display: none; /* For Chrome, Safari, and Edge */
+    }
+}
+
+input, input:focus, input:-webkit-autofill {
+  background: transparent; /* No background */
+  outline: none; /* No focus outline */
+  box-shadow: none; /* No shadows or insets */
+
+  border: none; /* No borders */
+
+  -webkit-box-shadow: 0 0 0px 1000px white inset; /* Fix autofill in Chrome/Safari */
+  -webkit-text-fill-color: #000; /* Autofill text color */
+}
+
+.skeleton-text-animated.ios.dark {
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.13) 8%,
+        rgba(255, 255, 255, 0.27) 18%,
+        rgba(255, 255, 255, 0.13) 33%
+    );
+    background-size: 800px 104px;
+
+    animation: slide 1s linear infinite;
+}
+
+:root {
+    line-height: 1.5;
+    font-weight: 400;
+
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #0070f3;
+
+    color-scheme: light dark;
+    ::-moz-selection {
+        color: black;
+        background-color: transparent;
+    }
+
+    ::selection {
+        color: black;
+        background-color: transparent;
+    }
+}
+
+.bg-gontrel-blue {
+    background-color: #0070f3;
+}
+
+.text-gontrel-blue {
+    color: #0070f3;
+}
+
+.ion-page > ion-content > div {
+    height: 100%;
+}
+
+.loading-page {
+    display: flex;
+
+    height: 100vh;
+
+    background-color: #ffffff;
+
+    justify-content: center;
+    align-items: center;
+    &.dark {
+        background-color: #000000;
+    }
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+h2 {
+    margin: 0;
+
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+p {
+    margin: 0;
+
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    &.subtext {
+        color: #393d41;
+
+        text-align: left;
+    }
+}
+
+a {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+
+    color: #0070f3;
+
+    text-decoration: none;
+
+    &:focus-visible {
+        outline: none;
+
+        text-decoration: underline;
+    }
+}
+
+form {
+    height: 100%;
+    .form--inputs {
+        & > div:not(.checkbox) {
+            @apply flex flex-col text-left gap-y-2 w-full;
+        }
+    }
+}
+
+ion-checkbox {
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: #c2c3c4;
+    --border-radius: 4px;
+
+    --transition: border-color 0.25s;
+
+    --size: 24px;
+    --checkmark-width: 3px;
+    --checkbox-background-checked: #0070f3;
+    --checkbox-background: #ffffff;
+
+    &.has-focus {
+        outline: none;
+
+        --border-color: #0070f3;
+    }
+
+    + .checkbox--label > a {
+        font-size: 16px;
+        line-height: 1.5;
+        font-weight: 400;
+
+        color: #0070f3;
+
+        position: relative;
+        z-index: 10;
+
+        text-decoration: underline;
+
+        &:hover,
+        &:focus-visible {
+            font-weight: 500;
+        }
+    }
+}
+
+ion-toast {
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+
+    --background: #0070f3;
+
+    --border-radius: 8px;
+    // --color: #FFFFFF;
+
+    --padding-start: 16px;
+    --padding-end: 16px;
+
+    &.error--toast {
+        --color: #a80000; // red-600
+        --background: #fde6e6; // red-50
+    }
+    &.success--toast {
+        --color: #00b105; // green-600
+        --background: #e6f9e6; // green-50
+    }
+    &.warning--toast {
+        --color: #e89900; // orange-600
+        --background: #fff6e6; // orange-50
+    }
+}
+
+ion-badge {
+    --padding-top: 4px;
+    --padding-bottom: 4px;
+
+    --font-weight: 500;
+
+    --color: #ffffff;
+    --background: #0070f3;
+
+    --border-radius: 50%;
+
+    --padding-start: 8px;
+    --padding-end: 8px;
+}
+
+ion-modal {
+    ion-backdrop {
+        visibility: visible;
+    }
+    .modal-wrapper {
+        overflow: hidden;
+
+        width: 86%;
+        height: 86%;
+
+        margin: 7%;
+
+        border-radius: 13px;
+
+        position: absolute;
+    }
+}
+
+ion-button,
+button,
+a {
+    cursor: pointer !important;
+}
+
+ion-input.ios {
+    margin: 0;
+    --padding-top: 12px;
+    --padding-bottom: 12px;
+
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+
+    color: black;
+    background-color: white;
+
+    border: 1px solid #c2c3c4;
+    border-radius: 8px;
+
+    transition: border-color 0.25s;
+
+    --placeholder-font-weight: 500;
+    --placeholder-color: #7a7d80;
+    --padding-end: 16px;
+    --padding-start: 16px;
+    --highlight-color-invalid: #ed0000;
+
+    & + button.icon-button {
+        display: flex;
+
+        margin: 0;
+        padding: 0;
+
+        color: black;
+        background: none;
+        outline: none;
+
+        border-color: #c2c3c4;
+        border-left: none;
+
+        cursor: pointer;
+
+        z-index: 100;
+
+        align-items: center;
+
+        appearance: none;
+        @apply rounded-s-none pe-4;
+        ion-icon,
+        svg {
+            width: 24px;
+            height: 24px;
+
+            font-size: 24px;
+        }
+        &:focus-visible > ion-icon {
+            color: #0070f3;
+        }
+    }
+
+    &.valid {
+        border-color: #008a04;
+    }
+
+    &.error {
+        border-color: #ed0000;
+    }
+
+    & + .helper--text {
+        color: #393d41;
+    }
+
+    &.has-focus {
+        border-color: #0070f3 !important;
+    }
+
+    &.password {
+        border-right: none;
+        &.valid {
+            & + button.icon-button {
+                border-color: #008a04 !important;
+                border-left: none;
+            }
+        }
+
+        &.error {
+            & + button.icon-button {
+                border-color: #ed0000 !important;
+                border-left: none;
+            }
+        }
+
+        &.has-focus {
+            & + button.icon-button {
+                border-color: #0070f3 !important;
+                border-left: none;
+            }
+        }
+
+        @apply rounded-r-none border-r-transparent;
+    }
+
+    /* For Webkit-based browsers (e.g., Chrome, Safari) */
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+        -webkit-text-fill-color: black !important;
+    }
+
+    /* For Mozilla Firefox */
+    input:-moz-autofill {
+        -moz-box-shadow: 0 0 0px 1000px white inset !important;
+        -moz-text-fill-color: black !important;
+    }
+
+    /* For other browsers that support autofill styling */
+    input:-internal-autofill-selected {
+        color: black !important;
+        background-color: transparent !important;
+    }
+}
+
+ion-modal {
+    --background: #fff;
+
+    --border-radius: 16px;
+
+    --backdrop-opacity: 0.7;
+    --backdrop-background-color: #000;
+    &.auto-height {
+        --height: auto;
+        &.bottom {
+            align-items: flex-end;
+        }
+
+        .ion-page {
+            display: block;
+
+            position: relative;
+
+            contain: content;
+
+            ion-toolbar {
+                --background: #fff;
+            }
+
+            .inner-content {
+                overflow: auto;
+
+                max-height: 60vh;
+            }
+        }
+    }
+}
+
+ion-icon {
+    --width: 24px;
+    --height: 24px;
+
+    --font-size: 24px;
+}
+
+ion-toolbar {
+    --background: white;
+
+    --border-width: 0;
+    --border-style: none;
+}
+
+ion-chip.display {
+    --color: #ffffff;
+    --background: rgba(0, 0, 0, 0.5);
+}
+
+ion-button.ios {
+    --box-shadow: none !important;
+
+    --background-activated: initial !important;
+    --background-focused: initial !important;
+    --background-hover: initial !important;
+
+    &.cta-chip.button-clear {
+        height: 36px;
+
+        margin: 0;
+        --padding-top: 8px;
+        --padding-bottom: 8px;
+
+        background-color: #0070f3;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+
+        border-radius: 20px;
+
+        white-space: nowrap;
+        --padding-start: 8px;
+        --padding-end: 8px;
+
+        @apply text-white flex items-center justify-center;
+
+        svg {
+            @apply me-2;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 150%;
+            font-weight: 500;
+        }
+    }
+    &.button-clear.clear {
+        min-height: 20px;
+
+        margin: 0;
+        --padding-top: 0;
+        --padding-bottom: 0;
+
+        --padding-start: 0;
+        --padding-end: 0;
+    }
+    &.gontrel-blue {
+        &.button-solid {
+            margin: 0;
+
+            --color: #ffffff;
+            --background: #0070f3;
+
+            --border-radius: 8px;
+
+            --ripple-color: #ffffff;
+
+            &.button-disabled {
+                --color: #ffffff;
+                --background: #549ff7;
+
+                opacity: 1;
+            }
+        }
+        &.button-outline {
+            margin: 0;
+
+            --color: #0070f3;
+            --background: white;
+
+            --border-width: 1px;
+            --border-style: solid;
+            --border-color: #0070f3;
+            --border-radius: 8px;
+        }
+        &.button-clear {
+            margin: 0;
+
+            --color: #0070f3;
+            --background: transparent;
+        }
+    }
+
+    &.sign--button.button-outline {
+        margin: 0;
+
+        --color: rgba(0, 0, 0, 0.54);
+        --background: white;
+
+        --border-color: #ebecec;
+        --border-radius: 8px;
+
+        --background-hover: var(--ion-color-contrast, #ffffff);
+        --background-activated: var(--ion-color-contrast, #ffffff);
+        --background-focused: var(--ion-color-contrast, #ffffff);
+        --background-selected: var(--ion-color-contrast, #ffffff);
+
+        &:hover {
+            color: var(--ion-color-dark-tint);
+        }
+        svg {
+            color: #000;
+
+            margin-inline-start: 0;
+            margin-inline-end: 0px;
+        }
+    }
+
+    .chip {
+        --padding: 8px;
+
+        font-size: 14px;
+
+        --color: #003b93;
+        --background: #e2f5ff;
+        --box-shadow: none;
+
+        --border-radius: 24px;
+    }
+
+    &:not(.button-clear) {
+        --padding-top: 12px;
+        --padding-bottom: 12px;
+
+        --box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+
+        --border-radius: 24px;
+
+        text-transform: none;
+        --padding-start: 24px;
+        --padding-end: 24px;
+    }
+
+    &.button-clear {
+        --padding-top: 12px;
+        --padding-bottom: 12px;
+
+        font-weight: 500;
+
+        --color: #0070f3;
+        --box-shadow: none;
+
+        --border-radius: 24px;
+
+        text-transform: none;
+        --padding-start: 24px;
+        --padding-end: 24px;
+    }
+}
+
+button {
+    padding: 0.6em 1.2em;
+
+    font-size: 1em;
+    font-family: inherit;
+    font-weight: 500;
+
+    background-color: #1a1a1a;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: border-color 0.25s;
+}
+
+button:hover {
+    border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+#map {
+    width: 0px;
+    height: 0px;
+
+    margin: 0px;
+    padding: 0px;
+
+    opacity: 0;
+}

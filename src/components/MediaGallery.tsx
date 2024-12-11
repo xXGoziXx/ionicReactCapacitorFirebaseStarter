@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
 import { FirestorePost, Tag } from '../models/Post';
-import { chunk, fetchTags, fetchVideoUrls, cleanupVideoElements, VideoRef } from '../lib/posts';
+import { fetchTags, fetchVideoUrls, cleanupVideoElements, VideoRef } from '../lib/posts';
 
 interface MediaGalleryProps {
     posts: FirestorePost[];

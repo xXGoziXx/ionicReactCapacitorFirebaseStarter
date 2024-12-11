@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "forceConsistentCasingInFileNames": true,
+        "module": "NodeNext",
+        "moduleResolution": "nodenext",
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "outDir": "lib",
+        "sourceMap": true,
+        "strict": true,
+        "target": "ES2022"
+    },
+    "compileOnSave": true,
+    "include": [
+        "src"
+    ]
+}

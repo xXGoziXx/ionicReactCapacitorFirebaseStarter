@@ -1,0 +1,450 @@
+/* custom-styles.scss */
+
+.welcome-text {
+    display: flex;
+
+    height: 70vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-circle {
+    width: 40px;
+    height: 40px;
+
+    margin-bottom: 20px;
+
+    border: 4px solid #3498db;
+    /* Set the color of the loading circle */
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    /* Add spacing between the loading circle and the text */
+
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ripple-parent {
+    overflow: hidden;
+
+    position: relative;
+}
+
+.custom-round-button {
+    width: 90%;
+
+    border-radius: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.button-container ion-button {
+    width: 90%;
+
+    margin: 5px;
+}
+
+.disabled-button {
+    /* Use the desired gray color for the background */
+    color: #ffffff;
+    background-color: #808080;
+    /* Set the text color for better contrast */
+
+    cursor: not-allowed !important;
+    /* Change the cursor to indicate the button is disabled */
+}
+
+.email-circle--container {
+    display: flex;
+
+    width: 72px;
+    height: 72px;
+
+    margin-top: 50px;
+
+    background-color: #FFF6E6;
+
+    justify-content: center;
+    align-items: center;
+    &.active {
+        background-color: #E6F9E6;
+    }
+}
+/* Your global styles */
+
+.spacer {
+    font-size: 14px !important;
+    font-weight: normal;
+
+    color: rgba(255, 255, 255, 0.6) !important;
+    //   @apply ps-5;
+}
+
+.round-icon {
+    color: #fff;
+
+    border: solid 12px #d95c69;
+    /* padding: 10px; */
+    /* max-width: 40px; */
+    /* min-width: 40px; */
+    /* max-height: 29px; */
+    /* min-height: 40px; */
+    border-radius: 50%;
+}
+
+.video-container {
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    max-height: 100vh;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* .overlay-content {
+  position: absolute;
+  top: 80%;
+  left: 46%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  color: white;
+} */
+
+.stack-item {
+    padding-top: 20px;
+}
+
+.overlay-content {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    max-height: 100vh;
+
+    color: white;
+    background-color: rgba(0, 0, 0, 0.55);
+
+    position: absolute;
+    top: 0;
+
+    text-align: center;
+}
+
+ion-item {
+    /* Adjust the border-radius as needed */
+    margin-bottom: 10px;
+
+    border-radius: 10px;
+}
+
+ion-list {
+    background-color: transparent !important;
+}
+
+.tp-li ion-item {
+    background-color: transparent !important;
+}
+
+.rounded-image {
+    width: 30px;
+    /* Adjust the width as needed */
+    height: 30px;
+
+    border-radius: 50%;
+    /* Adjust the height as needed */
+}
+
+:host(.tab-selected) {
+    color: #005889 !important;
+}
+
+ion-tab-button.ion-activatable {
+    color: #afafaf;
+}
+
+ion-tab-button.tab-selected {
+    color: #005889 !important;
+}
+
+.round-icon {
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.round-icon:hover {
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+
+    transform: translateY(-5px);
+}
+
+ion-item.item.ios.item-lines-default.item-fill-none.in-list.item-label {
+    color: #005889 !important;
+    background-color: #afafaf;
+}
+
+/* ion-label.sc-ion-label-ios-h.sc-ion-label-ios-s.ios {
+    margin: 0;
+} */
+
+.bold {
+    font-size: 12px !important;
+    font-weight: bold !important;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+/* ion-router-outlet {
+    overflow-y: auto;
+} */
+
+ion-back-button {
+    color: #000000 !important;
+}
+
+.list-item-gt {
+    padding-right: 10px;
+
+    position: absolute;
+}
+
+.side-by-side-container {
+    text-align: center;
+    /* Optional: Center the items horizontally */
+}
+
+.side-by-side-item {
+    float: left;
+
+    width: auto;
+    height: auto;
+
+    margin-bottom: 10px;
+    padding: 10px;
+
+    font-weight: bold;
+    /* margin: 10px; */
+
+    color: #005889;
+    background-color: #fff;
+
+    border-radius: 19px;
+
+    margin-inline-end: 10px;
+}
+
+.side-by-side-container-plain {
+    width: 100% !important;
+
+    text-align: center;
+    /* Optional: Center the items horizontally */
+}
+
+.side-by-side-item-plain {
+    float: left;
+
+    width: auto;
+    height: auto;
+}
+.side-by-side-item h6 {
+    margin: 0 !important;
+}
+
+.absolute-b {
+    position: absolute !important;
+    bottom: 0px;
+}
+
+.full {
+    clear: both !important;
+
+    width: 100vw !important;
+}
+
+.header-md {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.button-clear {
+    --color: var(--ion-color-contrast);
+}
+
+ion-button.edit-button {
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+}
+
+ion-card-title,
+ion-card-subtitle {
+    --color: var(--ion-color-primary-shade);
+}
+
+.shadow {
+    &.top {
+        box-shadow: 0px -15px 10px -15px #111;
+    }
+
+    &.bottom {
+        box-shadow: 0px 15px 10px -15px #111;
+    }
+
+    &.left {
+        box-shadow: -15px 0px 10px -15px #111;
+    }
+
+    &.right {
+        box-shadow: 15px 0px 10px -15px #111;
+    }
+}
+
+.close-button {
+    /* border-left: solid 1px #fff; */
+    padding-left: 10px;
+}
+
+/* Add this to your CSS file or component styles */
+.comment-section {
+    padding: 10px;
+}
+
+.custom-modal {
+    background-color: #333 !important;
+}
+
+.custom-modal {
+    /* Set the text color to white */
+    text-align: left !important;
+    --ion-background-color: #333;
+    /* Set the background color to charcoal black */
+    --ion-text-color: #fff;
+}
+
+.custom-modal .comment-body {
+    background-color: transparent;
+}
+
+.modal-close-btn {
+    --ion-background-color: rgba(255, 255, 255, 0);
+}
+
+.push-down {
+    margin-top: 27vh;
+}
+
+.top-comment-bar {
+    padding-inline-end: 10px;
+    padding-inline-start: 10px;
+}
+
+.comment-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    min-height: 45vh;
+    max-height: 45vh;
+
+    padding-inline-end: 10px;
+    padding-inline-start: 10px;
+}
+
+.full-width {
+    display: block;
+
+    --ion-width: 100vw;
+}
+
+.full-width::shadow ion-row {
+    display: block;
+
+    --ion-width: 100vw;
+}
+
+.padded-input::part(placeholder) {
+    padding-bottom: 4rem;
+}
+
+:host(.button-solid),
+.button-native {
+    --color: var(--ion-color-primary-contrast, #fff);
+    --background: var(--ion-color-primary, #005889);
+    background: #005889;
+}
+
+.video-content {
+    width: 100%;
+
+    position: absolute;
+    bottom: 10vh;
+}
+
+.error--text {
+    color: #ed0000;
+}
+
+.valid--text {
+    color: #008a04;
+}
+
+.helper--text,
+.error--text,
+.valid--text {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+img.loader {
+    width: auto !important;
+    height: auto !important;
+
+    transform-origin: 42.75% 50%;
+}
+
+.pulse {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.ripple-parent {
+    display: flex;
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    position: relative;
+
+    justify-content: center;
+    align-items: center;
+
+    -webkit-user-select: none;
+    user-select: none;
+}

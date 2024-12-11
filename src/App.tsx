@@ -26,7 +26,8 @@ import '@ionic/react/css/float-elements.css';
 import '@ionic/react/css/padding.css';
 import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
-import "./theme/variables.css";
+// import "./theme/variables.css";
+// import './App.scss';
 
 setupIonicReact({
     mode: 'ios'
