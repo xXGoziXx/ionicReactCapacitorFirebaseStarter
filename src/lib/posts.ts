@@ -46,70 +46,84 @@ export async function fetchRecommendedPosts({
     userID,
     signal
 }: FetchRecommendedPostsParams): Promise<FirestorePost[]> {
-    if (!userID) {
-        throw new Error("User ID is required");
-    }
-
-    if (signal.aborted) {
-        throw new Error("Operation cancelled");
-    }
-
-    const { snapshot: userRecommendations } = await FirebaseFirestore.getDocument<UserExplore>({
-        reference: `userExplorePosts/${userID}`
-    });
-
-    if (signal.aborted) {
-        throw new Error("Operation cancelled");
-    }
-
-    const recommendationData = userRecommendations.data;
-    if (!recommendationData?.posts?.length) {
-        return [];
-    }
-
-    // Chunk the post IDs into groups of 10 for batch processing
-    const CHUNK_SIZE = 10;
-    const postIDChunks = chunk(recommendationData.posts.slice(0, CHUNK_SIZE), CHUNK_SIZE);
-
-    // Process all chunks in parallel using Promise.all
-    const postsPromises = postIDChunks.map(async (postIDChunk: string[]) => {
-        if (signal.aborted) {
-            throw new Error("Operation cancelled");
+    try {
+        if (!userID) {
+            throw new Error('User ID is required');
         }
 
-        const { snapshots } = await FirebaseFirestore.getCollection<FirestorePost>({
-            reference: "posts",
-            compositeFilter: {
-                type: "and",
-                queryConstraints: [
-                    {
-                        type: "where",
-                        fieldPath: "__name__",
-                        opStr: "in",
-                        value: postIDChunk
-                    }
-                ]
+        if (signal.aborted) {
+            throw new Error('Operation cancelled');
+        }
+
+        const { snapshot: userRecommendations } =
+            await FirebaseFirestore.getDocument<UserExplore>({
+                reference: `userExplorePosts/${userID}`
+            });
+
+        if (signal.aborted) {
+            throw new Error('Operation cancelled');
+        }
+
+        const recommendationData = userRecommendations.data;
+        if (!recommendationData?.posts?.length) {
+            return [];
+        }
+
+        // Chunk the post IDs into groups of 10 for batch processing
+        const CHUNK_SIZE = 10;
+        const postIDChunks = chunk(
+            recommendationData.posts.slice(0, CHUNK_SIZE),
+            CHUNK_SIZE
+        );
+
+        // Process all chunks in parallel using Promise.all
+        const postsPromises = postIDChunks.map(
+            async (postIDChunk: string[]) => {
+                if (signal.aborted) {
+                    throw new Error('Operation cancelled');
+                }
+
+                const { snapshots } =
+                    await FirebaseFirestore.getCollection<FirestorePost>({
+                        reference: 'posts',
+                        compositeFilter: {
+                            type: 'and',
+                            queryConstraints: [
+                                {
+                                    type: 'where',
+                                    fieldPath: '__name__',
+                                    opStr: 'in',
+                                    value: postIDChunk
+                                }
+                            ]
+                        }
+                    });
+
+                return snapshots
+                    .map(snapshot => {
+                        const data = snapshot.data;
+                        if (!data) return undefined;
+                        return data;
+                    })
+                    .filter(
+                        (post): post is FirestorePost => post !== undefined
+                    );
             }
-        });
+        );
 
-        return snapshots
-            .map(snapshot => {
-                const data = snapshot.data;
-                if (!data) return undefined;
-                return data;
-            })
-            .filter((post): post is FirestorePost => post !== undefined);
-    });
+        if (signal.aborted) {
+            throw new Error('Operation cancelled');
+        }
 
-    if (signal.aborted) {
-        throw new Error("Operation cancelled");
+        // Wait for all chunks to be processed
+        const chunkedResults = await Promise.all(postsPromises);
+
+        // Flatten the results into a single array
+        return chunkedResults.flat();
+    } catch (error) {
+        console.error('Error fetching recommended posts:', error);
+        return [];
     }
-
-    // Wait for all chunks to be processed
-    const chunkedResults = await Promise.all(postsPromises);
-
-    // Flatten the results into a single array
-    return chunkedResults.flat();
 }
 
 /**

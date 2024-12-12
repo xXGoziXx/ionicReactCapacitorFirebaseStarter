@@ -61,7 +61,7 @@ export const initializeFirebase = async (): Promise<void> => {
 
       await FirebaseFirestore.enableNetwork();
       await FirebaseAuthentication.setPersistence({
-        persistence: Persistence.BrowserLocal
+        persistence: Persistence.IndexedDbLocal
       });
     }
   } catch (error) {

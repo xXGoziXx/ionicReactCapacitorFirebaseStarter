@@ -67,7 +67,7 @@ const MediaGallery: React.FC<MediaGalleryProps> = ({ posts }) => {
                     <IonCard key={post.ID} className="m-0">
                         <IonCardHeader>
                             <IonCardTitle>{post.ID} - {post.locationID}</IonCardTitle>
-                            <IonCardSubtitle>{post.createdAt.toDate().toLocaleString()}</IonCardSubtitle>
+                            {/* <IonCardSubtitle>{post.createdAt.toDate().toLocaleString()}</IonCardSubtitle> */}
                         </IonCardHeader>
                         <IonCardContent>
                             {videoUrls[index] && (

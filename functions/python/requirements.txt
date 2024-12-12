@@ -1,0 +1,5 @@
+
+google-cloud-aiplatform==1.70.0
+requests==2.32.3
+firebase-functions==0.4.2
+python-dotenv==1.0.1
