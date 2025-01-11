@@ -1,7 +1,4 @@
 import {
-    DocumentData,
-    QueryDocumentSnapshot,
-    SnapshotOptions,
     Timestamp
 } from 'firebase/firestore';
 
@@ -57,8 +54,10 @@ export interface User {
     searchHistory: SearchResultType[];
     isVerified: boolean;
     isAdmin: boolean;
+    isGuest?: boolean;
     createdAt: Timestamp;
     modifiedAt: Timestamp;
+    blacklist: string[];
 }
 export interface UserExplore {
     ID: string;
@@ -67,71 +66,3 @@ export interface UserExplore {
     createdAt: Timestamp;
     modifiedAt: Timestamp;
 }
-
-export const userExploreConverter = {
-    toFirestore: ({ID, posts, current_index, createdAt, modifiedAt}: UserExplore): DocumentData => {
-        return {
-           ID,
-           posts,
-           current_index,
-           createdAt,
-           modifiedAt,
-        };
-    },
-    fromFirestore: (
-        snapshot: QueryDocumentSnapshot<UserExplore>,
-        options?: SnapshotOptions
-    ): UserExplore => {
-        const {ID, posts, current_index, createdAt, modifiedAt} = snapshot.data(options);
-        return {
-            ID,
-            posts,
-            current_index,
-            createdAt,
-            modifiedAt
-        };
-    }
-};
-
-export const userConverter = {
-    toFirestore: (user: User): DocumentData => {
-        return {
-            ID: user.ID,
-            aboutMe: user.aboutMe,
-            email: user.email,
-            displayName: user.displayName,
-            phoneNumber: user.phoneNumber,
-            profileImage: user.profileImage,
-            username: user.username,
-            location: user.location,
-            selectedOptions: user.selectedOptions,
-            searchHistory: user.searchHistory,
-            isVerified: user.isVerified,
-            isAdmin: user.isAdmin,
-            createdAt: user.createdAt,
-            modifiedAt: user.modifiedAt
-        };
-    },
-    fromFirestore: (
-        snapshot: QueryDocumentSnapshot,
-        options?: SnapshotOptions
-    ): User => {
-        const data = snapshot.data(options);
-        return {
-            ID: data.ID,
-            aboutMe: data.aboutMe,
-            email: data.email,
-            displayName: data.displayName,
-            phoneNumber: data.phoneNumber,
-            profileImage: data.profileImage,
-            username: data.username,
-            location: data.location,
-            selectedOptions: data.selectedOptions,
-            searchHistory: data.searchHistory,
-            isVerified: data.isVerified,
-            isAdmin: data.isAdmin,
-            createdAt: data.createdAt,
-            modifiedAt: data.modifiedAt
-        };
-    }
-};

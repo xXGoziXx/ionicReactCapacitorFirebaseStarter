@@ -1,7 +1,5 @@
 import {
     GeoPoint,
-    QueryDocumentSnapshot,
-    SnapshotOptions,
     Timestamp
 } from 'firebase/firestore';
 import { FoodTypeEnum, LabelEnum, OpeningHours } from './Location';
@@ -63,7 +61,6 @@ export interface ReportedPost {
     userID: string;
     postID: string;
     createdAt: Timestamp;
-    // modifiedAt: Timestamp;
 }
 
 export interface Post {
@@ -102,120 +99,3 @@ export interface FirestorePost {
     tags: string[];
     isVerified: boolean;
 }
-
-export const reportedPostConverter = {
-    toFirestore: ({
-        ID,
-        userID,
-        postID,
-        createdAt
-    }: ReportedPost): ReportedPost => {
-        return {
-            ID: ID || '',
-            userID,
-            postID,
-            createdAt
-        };
-    },
-    fromFirestore: (
-        snapshot: QueryDocumentSnapshot<ReportedPost>,
-        options?: SnapshotOptions
-    ): ReportedPost => {
-        const { ID, userID, postID, createdAt } = snapshot.data(options);
-        return {
-            ID,
-            userID,
-            postID,
-            createdAt
-        };
-    }
-};
-
-export const tagConverter = {
-    toFirestore: ({ ID, name, count, createdAt, modifiedAt }: Tag): Tag => {
-        return {
-            ID: ID || '',
-            name,
-            count,
-            createdAt,
-            modifiedAt
-        };
-    },
-    fromFirestore: (
-        snapshot: QueryDocumentSnapshot<Tag>,
-        options?: SnapshotOptions
-    ): Tag => {
-        const { ID, name, count, createdAt, modifiedAt } =
-            snapshot.data(options);
-        return {
-            ID,
-            name,
-            count,
-            createdAt,
-            modifiedAt
-        };
-    }
-};
-
-export const postConverter = {
-    toFirestore: ({
-        ID,
-        userID,
-        username,
-        locationID,
-        src,
-        views,
-        tiktokLink,
-        tags,
-        isVerified,
-        createdAt,
-        modifiedAt
-    }: Post): FirestorePost => {
-        // update/set the location in the locations collection
-        // remaining information which would be the Media src (video url and thumbnail url) will go into the post
-        return {
-            ID: ID || '',
-            userID,
-            username,
-            locationID,
-            createdAt,
-            modifiedAt,
-            src,
-            views,
-            tags: tags || [],
-            tiktokLink: tiktokLink || '',
-            isVerified
-        };
-    },
-    fromFirestore: (
-        snapshot: QueryDocumentSnapshot<FirestorePost>,
-        options?: SnapshotOptions
-    ): FirestorePost => {
-        const {
-            ID,
-            userID,
-            username,
-            locationID,
-            createdAt,
-            modifiedAt,
-            src,
-            views,
-            tiktokLink,
-            tags,
-            isVerified
-        } = snapshot.data(options);
-        return {
-            ID,
-            userID,
-            username,
-            locationID,
-            createdAt,
-            modifiedAt,
-            src,
-            views,
-            tiktokLink,
-            tags,
-            isVerified
-        };
-    }
-};

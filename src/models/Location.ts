@@ -1,14 +1,6 @@
 import { Timestamp } from 'firebase/firestore';
 import { PostTypeEnum } from './Post';
 
-export interface FirestorePlace {
-    placeID: string;
-    description: string;
-    lat: number;
-    lng: number;
-    createdAt: Timestamp;
-}
-
 export enum LabelEnum {
     CASUAL = 'Casual',
     BRUNCH = 'Brunch',
@@ -30,7 +22,7 @@ export enum PageTypeEnum {
     SHARED = 'shared',
     SEARCH = 'search',
     USER = 'user',
-    VERIFIER = 'verifier',
+    VERIFIER = 'verifier'
 }
 export enum FoodTypeEnum {
     ASIAN = 'Asian',
@@ -70,6 +62,7 @@ export interface Location {
     searchName: string;
     lat: number;
     lng: number;
+    geohash: string;
     distance?: number;
     openingHours?: OpeningHours;
     toilets?: boolean;
@@ -78,7 +71,7 @@ export interface Location {
     address: string;
     photos?: string[];
     rating?: number;
-    reviews?: any[];
+    reviews?: google.maps.places.PlaceReview[];
     priceLevel?: number;
     menu?: string;
     reservation?: string;
@@ -87,101 +80,3 @@ export interface Location {
     isVerified?: boolean;
     modifiedAt: Timestamp;
 }
-
-export const locationConverter = {
-    toFirestore: ({
-        ID,
-        createdAt,
-        openingHours,
-        type,
-        name,
-        searchName,
-        lat,
-        lng,
-        phoneNumber,
-        website,
-        address,
-        photos,
-        rating,
-        reviews,
-        priceLevel,
-        menu,
-        reservation,
-        labels,
-        foodTypes,
-        isVerified,
-        modifiedAt
-    }: Location): Location => {
-        return {
-            ID,
-            createdAt,
-            openingHours,
-            type,
-            name,
-            searchName,
-            lat,
-            lng,
-            phoneNumber,
-            website,
-            address,
-            photos,
-            rating,
-            reviews,
-            priceLevel,
-            menu,
-            reservation,
-            labels,
-            foodTypes,
-            isVerified,
-            modifiedAt
-        };
-    },
-    fromFirestore: (snapshot: any, options?: any): Location => {
-        const {
-            ID,
-            createdAt,
-            openingHours,
-            type,
-            name,
-            searchName,
-            lat,
-            lng,
-            phoneNumber,
-            website,
-            address,
-            photos,
-            rating,
-            reviews,
-            priceLevel,
-            menu,
-            reservation,
-            labels,
-            foodTypes,
-            isVerified,
-            modifiedAt
-        } = snapshot.data(options);
-        return {
-            ID,
-            createdAt,
-            openingHours,
-            type,
-            name,
-            searchName,
-            lat,
-            lng,
-            phoneNumber,
-            website,
-            address,
-            photos,
-            rating,
-            reviews,
-            priceLevel,
-            menu,
-            reservation,
-            labels,
-            foodTypes,
-            isVerified,
-            modifiedAt
-        };
-    }
-};

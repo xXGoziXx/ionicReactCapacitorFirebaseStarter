@@ -1,0 +1,275 @@
+@import '../../mixins.scss';
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.post--card {
+    max-width: calc(
+        (9 / 16) * (100vh - 51px)
+    ); // 16:9 aspect ratio - ensures cta buttons stay within the video frame
+
+    margin: 0;
+    padding: 0;
+
+    font-size: inherit;
+    font-weight: inherit;
+
+    color: inherit;
+    outline: none;
+
+    border: none;
+    border-radius: 0px;
+
+    ion-icon {
+        width: 32px;
+        height: 32px;
+
+        font-size: 32px;
+    }
+    &:focus,
+    &:focus-visible,
+    &:focus-within,
+    &:hover {
+        outline: none;
+
+        border: none;
+    }
+
+    &.skeleton {
+        ion-skeleton-text {
+            --border-radius: 20px;
+
+            --background-rgb: 255, 255, 255;
+        }
+
+        .skeleton-text-large {
+            width: 144px;
+            height: 32px;
+        }
+
+        .skeleton-text-small {
+            width: 54px;
+            height: 24px;
+        }
+
+        .skeleton-text-avatar {
+            width: 128px;
+            height: 20px;
+        }
+        .skeleton-text-cta {
+            width: 88px;
+            height: 36px;
+        }
+    }
+
+    .post-content--container {
+        transition: opacity 0.5s ease-in-out;
+        a {
+            h4.location-name {
+                margin: 0;
+
+                font-size: 24px;
+                line-height: 150%;
+                font-weight: 600;
+
+                color: rgba(255, 255, 255, 1);
+                text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+
+                &:active {
+                    color: rgba(255, 255, 255, 0.5);
+                    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+
+        ion-chip.label-chip {
+            height: 24px;
+
+            margin: 0;
+            padding-top: 3px;
+            padding-bottom: 3px;
+
+            font-size: 14px;
+            line-height: 150%;
+            font-weight: 500;
+
+            color: white;
+            background-color: rgba(0, 0, 0, 0.55);
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+            @apply px-4;
+        }
+
+        ion-chip.user-chip {
+            margin: 0;
+            padding: 0;
+
+            font-size: 14px;
+            line-height: 150%;
+            font-weight: 500;
+
+            color: white;
+            background-color: transparent;
+
+            border: none;
+
+            ion-avatar {
+                margin: 0;
+
+                box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            ion-label.post-user--name {
+                margin-top: 6px;
+                margin-bottom: 6px;
+
+                font-size: 14px;
+                line-height: 150%;
+                font-weight: 500;
+
+                color: white;
+                text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+
+    .play-pause--container {
+        animation: fadeInOut 1s infinite;
+    }
+
+    .video-progress--container {
+        .preview {
+            background-image: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.6),
+                rgba(255, 255, 255, 0.2)
+            );
+            background-clip: padding-box;
+
+            border: 1px solid transparent;
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+
+                padding: 1px;
+
+                border-radius: 8px;
+            }
+        }
+    }
+
+    .ui-video-seek-slider {
+        .thumb .handler {
+            background-color: #0070f3;
+        }
+
+        .track .main .connect {
+            height: 8px;
+
+            background-color: #0070f3;
+        }
+
+        .hover-time {
+            .preview-screen {
+                width: 88px;
+                height: 120px;
+
+                background-clip: padding-box;
+
+                border: 1px solid transparent;
+
+                position: relative;
+
+                &::before {
+                    padding: 1px;
+
+                    content: '';
+
+                    background: linear-gradient(
+                        135deg,
+                        rgba(255, 255, 255, 0.6),
+                        rgba(255, 255, 255, 0.2)
+                    );
+
+                    border-radius: inherit;
+
+                    position: absolute;
+                    z-index: -1;
+                    top: -1px;
+                    right: -1px;
+                    bottom: -1px;
+                    left: -1px;
+                }
+            }
+        }
+    }
+}
+
+.post-more-menu {
+    @include menu-modal-styles;
+}
+
+.reported--success-modal {
+    --height: 320px;
+}
+
+.more--list {
+    ion-item {
+        margin-bottom: 0;
+
+        --inner-padding-bottom: 16px;
+        --inner-padding-top: 16px;
+    }
+
+    svg {
+        margin-bottom: 4px;
+    }
+}
+
+.post-right-cta--buttons {
+    ion-button.ios {
+        margin: 0;
+        --padding-top: 12px;
+        --padding-bottom: 12px;
+
+        --padding-start: 16px;
+        --padding-end: 16px;
+
+        svg {
+            filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 1));
+        }
+
+        .icon-text {
+            margin-top: 2px;
+
+            font-size: 12px;
+            line-height: 150%;
+            font-weight: 600;
+
+            color: #ffffff;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+        }
+
+        &.save-button {
+            &.ion-activated {
+                --opacity: 1 !important;
+
+                --background-activated-opacity: 1;
+                --background-focused-opacity: 1;
+                --background-hover-opacity: 1;
+            }
+        }
+    }
+}
