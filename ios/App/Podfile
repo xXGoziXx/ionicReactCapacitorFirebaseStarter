@@ -11,9 +11,6 @@ install! "cocoapods", :disable_input_output_paths => true
 def capacitor_pods
   pod 'Capacitor', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
-  pod 'CapacitorFirebaseAuthentication', :path => '../../node_modules/@capacitor-firebase/authentication'
-  pod 'CapacitorFirebaseFirestore', :path => '../../node_modules/@capacitor-firebase/firestore'
-  pod 'CapacitorFirebaseStorage', :path => '../../node_modules/@capacitor-firebase/storage'
   pod 'CapacitorApp', :path => '../../node_modules/@capacitor/app'
   pod 'CapacitorBrowser', :path => '../../node_modules/@capacitor/browser'
   pod 'CapacitorClipboard', :path => '../../node_modules/@capacitor/clipboard'
@@ -30,8 +27,7 @@ end
 
 target "App" do
   capacitor_pods
-  # Add your Pods here
-  pod "CapacitorFirebaseAuthentication/Google", :path => "../../node_modules/@capacitor-firebase/authentication"
+# Add your Pods here
 end
 
 post_install do |installer|
