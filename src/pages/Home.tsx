@@ -1,15 +1,12 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { User } from '@capacitor-firebase/authentication';
-import { PostCardCarousel } from '../components/PostCardCarousel/PostCardCarousel';
-import './Home.scss';
+import { IonContent, IonPage } from '@ionic/react';
 
-const Home: React.FC<{ user: User | null }> = ({ user }) => {
+const Home: React.FC = () => {
 
 
     return (
         <IonPage>
             <IonContent>
-                <PostCardCarousel />
+
             </IonContent>
         </IonPage>
     );
